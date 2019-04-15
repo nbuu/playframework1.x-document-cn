@@ -6,11 +6,11 @@ Play框架完全遵循MVC模式,MVC模式把应用程序分成几个独立的层
 ![Image text](img/1.png) 
 
 在Play应用程序里，这三个层被分别定义到app目录下的三个java包里。
-app/controllers
+ # app/controllers
 控制器就是一个java类，其中的每个public/static方法都是一个Action。一个action就是一个java入口点，当接收到一个http请求时，这个action就会被调用。控制器类里的java代码并不真正的面向对象的。Action方法从http请求中提取相关的数据，读取或更新model对象，并向http请求者返回一个封装好的response结果。
-app/models
+ # app/models
 领域模型对象层（以下简称model）是一系列完全使用java面向对象语言特征的java类，它包含了数据结构和数据操作。无论何时，model对象都需要存储到持久化存储设备里，一般情况下他们或许还包含有一些jpa注释和sql语句。
-app/views
+ # app/views
 通过使用play提供的高效模板系统，可以生成大多数应用程序的views。控制器从model层获得某些感兴趣的数据，然后把这些数据应用到一个模板，并且通过模板把这些数据装饰得非常漂亮。这个包由HTML, XML, JSON或其他特定用于动态生成model展现的模板文件组成。
 请求生命周期
 Play框架是一个完全的stateless框架，而且只面向request/response。所有的http请求都遵循以下过程：
