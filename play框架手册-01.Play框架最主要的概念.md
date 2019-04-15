@@ -12,13 +12,13 @@ Play框架完全遵循MVC模式,MVC模式把应用程序分成几个独立的层
 领域模型对象层（以下简称model）是一系列完全使用java面向对象语言特征的java类，它包含了数据结构和数据操作。无论何时，model对象都需要存储到持久化存储设备里，一般情况下他们或许还包含有一些jpa注释和sql语句。
  # app/views
 通过使用play提供的高效模板系统，可以生成大多数应用程序的views。控制器从model层获得某些感兴趣的数据，然后把这些数据应用到一个模板，并且通过模板把这些数据装饰得非常漂亮。这个包由HTML, XML, JSON或其他特定用于动态生成model展现的模板文件组成。
-请求生命周期
+ # 请求生命周期
 Play框架是一个完全的stateless框架，而且只面向request/response。所有的http请求都遵循以下过程：
-1.一个http请求被框架接收。
-2.Router组件试着找到能够接收这个请求的确切路由，相应的action方法随后被调用。
-3.应用程序代码被执行。
-4.如果需要生成一个复杂的view，那么一个模板文件将会被渲染。
-5.acton方法的结果（http 响应代码、内容）随后被作为http response发出。
+- 1.一个http请求被框架接收。
+- 2.Router组件试着找到能够接收这个请求的确切路由，相应的action方法随后被调用。
+- 3.应用程序代码被执行。
+- 4.如果需要生成一个复杂的view，那么一个模板文件将会被渲染。
+- 5.acton方法的结果（http 响应代码、内容）随后被作为http response发出。
 
 标准应用程序布局layout
 应用程序布局标准化是保持开发简单化的保证。
@@ -44,7 +44,7 @@ conf目录包含了所有应用程序的配置文件。
 如果其他库需要一个指定的配置文件，那么请把将该指定的配置文件放到conf目录（这个目录是play指定的java 类路径 ClassPath）,并在application.conf中用@include进行指定。
 注意，这是一个尚处在试验阶段的特性，目前或许还不能正常工作。尤其是占位符和框架id还不能正确处理这个特性。
 比如，如果你在conf/mime-types.conf文件里定义了一个附加的MIME类型：
-# Web fonts
+ # Web fonts
 mimetype.eot = application/vnd.ms-fontobject
 mimetype.otf = application/octet-stream
 mimetype.ttf = application/octet-stream
